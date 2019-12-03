@@ -13,6 +13,10 @@ module.exports = {
 
   mode: "development",
 
+  devServer: {
+    host: '0.0.0.0'
+  },
+
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin([

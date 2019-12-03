@@ -1,21 +1,57 @@
-import "./app-tasks.js";
+document.addEventListener('click', (evt) => {
+  const tab = evt.target.closest('.tab');
+  if (!tab) {
+    return;
+  }
+  evt.preventDefault();
 
-import("./app-stock.js");
-
-window.customElements.whenDefined("app-stock").then(() => {
-  document.querySelector("app-stock").activate();
+  activateTab(tab);
+  const { target } = tab.dataset;
+  const el = document.querySelector(target);
+  if (!el) {
+    return;
+  }
+  history.pushState(null, null, `${target}`)
+  el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
 });
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js");
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
 }
 
-window.addEventListener("beforeinstallprompt", event => {
+function init() {
+  const { hash } = document.location;
+  if (!hash) {
+    return;
+  }
+
+  const item = document.querySelector(`[data-target="${hash}"]`);
+  if (!item) {
+    return;
+  }
+  if (!item.classList.contains('tab')) {
+    return;
+  }
+  activateTab(item);
+}
+
+function activateTab(tab) {
+  tab.parentNode.querySelector('.tab.active').classList.remove('active');
+  tab.classList.add('active');
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+
+window.addEventListener('beforeinstallprompt', event => {
   event.preventDefault();
 
-  const a2hs = document.querySelector("#a2hs");
-  a2hs.classList.add("show");
-  a2hs.addEventListener("click", () => {
+  const a2hs = document.querySelector('#a2hs');
+  a2hs.classList.add('show');
+  a2hs.addEventListener('click', () => {
     event.prompt();
     event.userChoice.then(result => {
       // dismissed/accepted
