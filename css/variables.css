@@ -1,0 +1,28 @@
+:root {
+    --primary: #2980b9;
+    --navbar-height: 60px;
+    --tabs-height: 70px;
+    --tabs-position: fixed;
+    --tabs-bg: white;
+    --tabs-active-bg: #d7dde1;
+    --tabs-text-size: .7rem;
+    --tabs-display: block;
+    --tabs-line-height: .6rem;
+    --spacer: 1rem;
+    --body-bg: #ecf0f1;
+    --body-color: #131313;
+    --screen-flex-direction: row;
+    --screen-item-height: calc(100vh - var(--navbar-height) - var(--tabs-height));
+}
+
+@media screen and (min-width: 768px) {
+    :root {
+        --navbar-height: 150px;
+        --tabs-line-height: 1rem;
+        --tabs-position: static;
+        --screen-flex-direction: column;
+        --screen-item-height: auto;
+        --tabs-text-size: 1rem;
+        --tabs-display: flex;
+    }
+}

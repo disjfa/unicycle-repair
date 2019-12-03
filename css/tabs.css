@@ -1,0 +1,44 @@
+.tabs {
+    display: flex;
+    background-color: var(--tabs-bg);
+    position: var(--tabs-position);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: stretch;
+    justify-content: stretch;
+    height: var(--tabs-height);
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: initial;
+    opacity: 0.6;
+    transition: opacity, background-color 120ms ease-out;
+    line-height: var(--tabs-line-height);
+    background-color: var(--tabs-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tab.active {
+    opacity: 1;
+    background: var(--tabs-active-bg);
+    font-weight: bold;
+}
+
+.tab-icon {
+    margin: 0 auto;
+    height: 32px;
+    width: 32px;
+    flex: 1;
+}
+
+.tab-text {
+    flex: 1;
+    font-size: var(--tabs-text-size);
+}
+

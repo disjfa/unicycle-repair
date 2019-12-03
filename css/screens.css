@@ -1,0 +1,22 @@
+.screen {
+    min-height: var(--screen-item-height);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    flex-direction: var(--screen-flex-direction);
+}
+
+.screen-item {
+    height: var(--screen-item-height);
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: center;
+    overflow: auto;
+}
+
+.screen-content {
+    padding: var(--spacer);
+    max-width: 1140px;
+    margin: 0 auto;
+}
