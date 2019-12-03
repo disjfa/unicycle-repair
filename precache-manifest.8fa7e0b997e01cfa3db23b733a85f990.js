@@ -28,6 +28,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "css/variables.css"
   },
   {
+    "revision": "2bd768e4a6ecb06a9150ef2ccce5c4ca",
+    "url": "img/house.svg"
+  },
+  {
     "revision": "20ba7762fd15f087e6724860a222e3ce",
     "url": "index.html"
   },
