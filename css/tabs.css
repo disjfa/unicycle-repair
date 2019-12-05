@@ -40,5 +40,6 @@
 .tab-text {
     flex: 1;
     font-size: var(--tabs-text-size);
+    display: var(--tabs-text-display);
 }
 
