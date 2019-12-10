@@ -4,6 +4,8 @@
 @import "screens.css";
 @import "tabs.css";
 @import "responsive.css";
+@import "svg-with-js.css";
+@import "embed.css";
 
 #a2hs {
     position: absolute;

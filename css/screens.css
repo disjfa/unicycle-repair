@@ -9,14 +9,16 @@
 
 .screen-item {
     height: var(--screen-item-height);
+    min-height: var(--screen-item-min-height);
     min-width: 100%;
     max-width: 100%;
     scroll-snap-align: center;
     overflow: auto;
+    padding-top: var(--screen-item-padding-top);
 }
 
 .screen-content {
     padding: var(--spacer);
-    max-width: 1140px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }

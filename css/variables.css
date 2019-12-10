@@ -1,28 +1,36 @@
 :root {
     --primary: #2980b9;
+    --max-width: 1140px;
     --navbar-height: 60px;
     --tabs-height: 70px;
     --tabs-position: fixed;
     --tabs-bg: white;
-    --tabs-active-bg: #d7dde1;
+    --tabs-active-bg: #2980b9;
+    --tabs-active-color: #FFF;
     --tabs-text-size: .7rem;
+    --tabs-text-display: block;
     --tabs-display: block;
-    --tabs-line-height: .6rem;
+    --tabs-line-height: 1rem;
     --spacer: 1rem;
     --body-bg: #ecf0f1;
     --body-color: #131313;
     --screen-flex-direction: row;
     --screen-item-height: calc(100vh - var(--navbar-height) - var(--tabs-height));
+    --screen-item-min-height: auto;
+    --screen-item-padding-top: 0;
 }
 
 @media screen and (min-width: 768px) {
     :root {
         --navbar-height: 150px;
-        --tabs-line-height: 1rem;
+        --tabs-height: 50px;
         --tabs-position: static;
+        --tabs-text-size: 1rem;
+        --tabs-text-display: inline-flex;
+        --tabs-display: flex;
         --screen-flex-direction: column;
         --screen-item-height: auto;
-        --tabs-text-size: 1rem;
-        --tabs-display: flex;
+        --screen-item-min-height: 80vh;
+        --screen-item-padding-top: var(--tabs-height);
     }
 }
