@@ -21,6 +21,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyPlugin([
       { from: "index.html", to: "" },
+      { from: "favicon.ico", to: "" },
+      { from: "css", to: "css" },
+      { from: "img", to: "img" },
       {
         from: "manifest.json",
         to: ""

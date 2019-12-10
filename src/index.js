@@ -5,13 +5,12 @@ document.addEventListener('click', (evt) => {
   }
   evt.preventDefault();
 
-  activateTab(tab);
+  // activateTab(tab);
   const { target } = tab.dataset;
   const el = document.querySelector(target);
   if (!el) {
     return;
   }
-  history.pushState(null, null, `${target}`)
   el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' })
 });
 
@@ -38,12 +37,41 @@ function init() {
 }
 
 function activateTab(tab) {
+  if (tab.classList.contains('active')) {
+    return;
+  }
+
   tab.parentNode.querySelector('.tab.active').classList.remove('active');
   tab.classList.add('active');
+  history.pushState(null, null, `${tab.dataset.target}`)
 }
 
+const screens = document.querySelectorAll('.screen-item');
+
+function screenCallback(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const item = document.querySelector(`[data-target="#${entry.target.id}"]`);
+      if (!item) {
+        return;
+      }
+      activateTab(item);
+    }
+  });
+}
+
+let options = {
+  threshold: 0.4
+};
+
+let observer = new IntersectionObserver(screenCallback, options);
+screens.forEach(screen => {
+  observer.observe(screen);
+});
+
+
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js');
+  navigator.serviceWorker.register('sw.js');
 }
 
 window.addEventListener('beforeinstallprompt', event => {

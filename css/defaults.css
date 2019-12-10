@@ -10,3 +10,20 @@ body {
     color: var(--body-color);
     font-size: 1rem;
 }
+
+code {
+    display: inline-block;
+    background: #e0e4e5;
+    padding: .3rem;
+    border-radius: 3px;
+}
+
+.img-thumbnail {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #FFF;
+    border: #bdc3c7;
+    max-width: 100%;
+    height: auto;
+}

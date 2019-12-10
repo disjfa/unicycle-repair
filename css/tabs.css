@@ -1,3 +1,9 @@
+nav {
+    background-color: var(--tabs-bg);
+    position: sticky;
+    top: 0;
+}
+
 .tabs {
     display: flex;
     background-color: var(--tabs-bg);
@@ -5,6 +11,8 @@
     bottom: 0;
     left: 0;
     right: 0;
+    max-width: var(--max-width);
+    margin: 0 auto;
     align-items: stretch;
     justify-content: stretch;
     height: var(--tabs-height);
@@ -27,18 +35,12 @@
 .tab.active {
     opacity: 1;
     background: var(--tabs-active-bg);
-    font-weight: bold;
-}
-
-.tab-icon {
-    margin: 0 auto;
-    height: 32px;
-    width: 32px;
-    flex: 1;
+    color: var(--tabs-active-color);
 }
 
 .tab-text {
     flex: 1;
     font-size: var(--tabs-text-size);
+    display: var(--tabs-text-display);
 }
 

@@ -1,22 +1,28 @@
 {
-  "name": "livecode-prep",
-  "version": "1.0.0",
-  "description": "",
+  "name": "unicycle-repair",
+  "version": "0.1.0",
+  "description": "Basic html setup for pwa like app, only in html.",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server",
+    "deploy": "npm-run-all webpack gh-pages",
+    "gh-pages": "gh-pages -d dist",
+    "webpack": "webpack"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "disjfa",
+  "homepage": "https://github.com/disjfa/unicycle-repair",
+  "license": "MIT",
   "dependencies": {
+    "gh-pages": "^2.1.1",
+    "npm-run-all": "^4.1.5",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.0.5",
+    "copy-webpack-plugin": "^5.1.0",
     "workbox-webpack-plugin": "^4.3.1"
   }
 }
